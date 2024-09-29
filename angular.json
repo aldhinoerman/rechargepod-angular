@@ -19,7 +19,6 @@
           "options": {
             "aot": true,
             "sourceMap": true,
-            "environmentFilePath": "src/environments/environment.ts",
             "outputPath": "dist/rechargepod-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
