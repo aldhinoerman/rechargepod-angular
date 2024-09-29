@@ -1,4 +1,3 @@
 export const environment = {
-  apiKey: 'API_KEY',
-  // apiKey: 'Agcm4fUnlZXkbWMJYeYzgNHEZGhWkBUS',
+  apiKey: import.meta.env.NG_APP_PUBLIC_NYT_API_KEY,
 };
