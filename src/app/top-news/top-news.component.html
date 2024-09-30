@@ -1,0 +1,47 @@
+<app-section-wrapper id="top-news">
+  <div class="flex">
+    <div
+      class="hidden md:flex md:w-14 md:border-r md:border-r-secondary bg-primary"
+    ></div>
+    <div class="md:grid md:grid-cols-[1fr_0.5fr]">
+      <div>
+        <video
+          class="w-full h-full object-cover border-b border-b-secondary"
+          autoplay
+          loop
+          muted
+        >
+          <source src="/videos/home.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div>
+        <div
+          *ngIf="topStories$ | async as topStories"
+          class="grid grid-rows-2 grid-cols-1 h-full"
+        >
+          <div
+            *ngIf="topStories.length > 0"
+            class="border-b border-b-secondary p-4 flex flex-col justify-between"
+          >
+            <p class="text-xs">{{ topStories[0].item_type }}</p>
+            <h4 class="line-clamp-3">{{ topStories[0].title }}</h4>
+            <p class="text-xs text-right">
+              {{ topStories[0].published_date | date : "dd/MM/yyyy" }}
+            </p>
+          </div>
+          <div
+            *ngIf="topStories.length > 1"
+            class="border-b border-b-secondary p-4 flex flex-col justify-between"
+          >
+            <p class="text-xs">{{ topStories[1].item_type }}</p>
+            <h4 class="line-clamp-3">{{ topStories[1].title }}</h4>
+            <p class="text-xs text-right">
+              {{ topStories[1].published_date | date : "dd/MM/yyyy" }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-section-wrapper>

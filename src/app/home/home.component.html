@@ -1,36 +1,4 @@
 <app-header></app-header>
 <main>
-  <app-section-wrapper id="top-news">
-    <div class="flex">
-      <div
-        class="hidden md:flex md:w-14 md:border-r md:border-r-secondary bg-primary"
-      ></div>
-      <div class="md:grid md:grid-cols-[1fr_0.5fr]">
-        <div>
-          <video class="w-full border-b border-b-secondary" autoplay loop muted>
-            <source src="/videos/home.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div>
-          <div *ngIf="error$ | async as error">
-            <p>Error loading stories: {{ error.message }}</p>
-          </div>
-
-          <div *ngIf="topStories$ | async as topStories">
-            <div *ngIf="topStories.length > 0">
-              <h2>{{ topStories[0].title }}</h2>
-              <p>{{ topStories[0].abstract }}</p>
-              <a [href]="topStories[0].url" target="_blank">Read more</a>
-            </div>
-            <div *ngIf="topStories.length > 1">
-              <h2>{{ topStories[1].title }}</h2>
-              <p>{{ topStories[1].abstract }}</p>
-              <a [href]="topStories[1].url" target="_blank">Read more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </app-section-wrapper>
+  <app-top-news></app-top-news>
 </main>
