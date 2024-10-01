@@ -4,12 +4,10 @@
 @import "tailwindcss/utilities";
 
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0");
 
 h1 {
   font-size: 3rem;
-  &.logo {
-    font-family: "Cormorant Garamond", serif;
-  }
 }
 
 h2 {
@@ -26,4 +24,11 @@ h4 {
 
 h5 {
   font-size: 1.5rem;
+}
+
+h1,
+h3 {
+  &.logo {
+    font-family: "Cormorant Garamond", serif;
+  }
 }

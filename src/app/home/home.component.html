@@ -1,4 +1,15 @@
 <app-header></app-header>
 <main>
-  <app-top-news></app-top-news>
+  <div
+    class="hidden md:block md:fixed -z-10 md:left-0 md:bottom-0 md:w-8 md:h-screen md:border-r md:border-r-secondary bg-primary"
+  ></div>
+  <div class="md:ml-8">
+    <app-section-wrapper id="top-news">
+      <app-top-news></app-top-news>
+    </app-section-wrapper>
+    <app-section-wrapper id="popular-articles">
+      <app-popular-articles></app-popular-articles>
+    </app-section-wrapper>
+  </div>
 </main>
+<app-footer></app-footer>
