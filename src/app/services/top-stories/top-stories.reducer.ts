@@ -1,4 +1,4 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import { createReducer, on } from '@ngrx/store';
 import * as topStoriesActions from './top-stories.actions';
 
 export interface TopStoriesState {

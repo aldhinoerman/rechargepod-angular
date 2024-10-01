@@ -13,6 +13,8 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { topStoriesReducer } from './services/top-stories/top-stories.reducer';
 import { TopStoriesEffects } from './services/top-stories/top-stories.effects';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { PopularArticlesEffects } from './services/popular-articles/popular-articles.effects';
+import { popularArticlesReducer } from './services/popular-articles/popular-articles.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,8 +22,11 @@ export const appConfig: ApplicationConfig = {
     provideRouter(appRoutes),
     provideClientHydration(),
     provideHttpClient(withFetch()),
-    provideStore({ topstories: topStoriesReducer }),
-    provideEffects([TopStoriesEffects]),
+    provideStore({
+      topstories: topStoriesReducer,
+      popular_articles: popularArticlesReducer,
+    }),
+    provideEffects([TopStoriesEffects, PopularArticlesEffects]),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 };
